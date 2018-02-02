@@ -9,5 +9,4 @@ __Projects__
 5. Build a neighborhood map
 6. Deploy and configure a Linux server
 
-![alt text](https://drive.google.com/drive/u/0/folders/0B4IB1__2c27YTWlXOEZuUUt2c2c "Logo Title Text 1")
-
+![alt text](https://github.com/dangkhoa1992/Udacity-Full-Stack-Web-Developer-Nanodegree/blob/master/certificate.png "Certificate")
