@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="css/main.css">
+		<title>Neighborhood Map</title>
+	</head>
+	<body>
+		
+		<!-- Goolge Map -->
+		<main id="googleMap"></main>
+
+		<!-- filterList -->
+		<label for="filterList-toggle" id="filterList-menu"></label>
+		<input id="filterList-toggle" type="checkbox" data-bind="checked: showFilterList" />
+		<datalist id="filterList-container">
+			<input id="searchBoxInput" placeholder="Search for a place…" type="search" name="q" data-bind="value: filter, valueUpdate: 'keyup'" autocomplete="off">
+			<form id="filterList-scroller">
+				<ul data-bind="foreach: filteredList">
+					<li data-bind="click: $parent.goToPlace">
+						<strong data-bind="text: title"></strong>
+						<p data-bind="text: streetAddress"></p>
+						<p data-bind="text: cityAddress"></p>
+					</li>
+				</ul>
+			</form>
+		</datalist>
+
+		<!-- wikipedia API -->
+		<article id="wikipedia" data-bind="visible: showWikiArticles">
+			<h3 id="wikipedia-header" data-bind="text: wikiHeader"></h3>
+			<ul id="wikipedia-links" data-bind="foreach: wikiArticles">
+				<li><a class="web-links" data-bind="attr: {href: url}, text: title"></a></li>
+			</ul>
+		</article>
+		
+		<!-- Load scipts -->
+		<script type="text/javascript" src="js/lib/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="js/lib/knockout-3.3.0.js"></script>
+		<script type="text/javascript" src="js/locations.js"></script>
+		<script type="text/javascript" src="js/styles.js"></script>
+		<script type="text/javascript" src="js/app.js"></script>
+		<script 
+			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2wOdISuR-mP3JbSgZDyMjIWzsbc-dTtI&libraries=places,drawing,geometry&v=3&callback=initMap"
+			async defer onerror="mapError()">
+		</script>
+
+	</body>
+</html>

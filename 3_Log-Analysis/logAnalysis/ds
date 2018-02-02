@@ -1,0 +1,7 @@
+                                    Table "public.posts"
+ Column  |            Type             |                     Modifiers                      
+---------+-----------------------------+----------------------------------------------------
+ content | text                        | 
+ time    | timestamp without time zone | default now()
+ id      | integer                     | not null default nextval('posts_id_seq'::regclass)
+ 
